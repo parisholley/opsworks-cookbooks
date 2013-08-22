@@ -6,6 +6,7 @@
 #
 
 include_recipe "php"
+include_recipe "apache2::service"
 
 #the older version (3.0) had a bug in the init scripts that when it shut down the daemon it would also kill dpkg as it was trying to upgrade
 #let's remove the old packages before continuing
