@@ -1,3 +1,6 @@
 [submodule "newrelic"]
 	path = newrelic
 	url = git@github.com:escapestudios/chef-newrelic.git
+[submodule "python"]
+	path = python
+	url = git@github.com:opscode-cookbooks/python.git
