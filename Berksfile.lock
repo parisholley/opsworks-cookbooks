@@ -1,5 +1,10 @@
 {
   "sources": {
+    "php": {
+      "locked_version": "1.2.3",
+      "git": "https://github.com/parisholley/php.git",
+      "ref": "f4dfcdf68578f0e13b980774773fcd66cd248f6c"
+    },
     "newrelic": {
       "locked_version": "0.5.3",
       "git": "https://github.com/escapestudios/chef-newrelic.git",
@@ -7,11 +12,8 @@
     },
     "apc": {
       "locked_version": "1.0.0",
-      "git": "https://github.com/teamsnap/php-apc-cookbook",
+      "git": "https://github.com/teamsnap/php-apc-cookbook.git",
       "ref": "77fb1914440074b93a71414580dcd8ada2c74d77"
-    },
-    "php": {
-      "locked_version": "1.2.2"
     },
     "build-essential": {
       "locked_version": "1.4.0"

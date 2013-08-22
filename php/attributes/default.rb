@@ -18,6 +18,8 @@
 # limitations under the License.
 #
 
+include_attribute 'deploy'
+
 lib_dir = 'lib'
 default['php']['install_method'] = 'package'
 default['php']['directives'] = {}
