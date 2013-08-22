@@ -1,0 +1,3 @@
+[submodule "newrelic"]
+	path = newrelic
+	url = git@github.com:escapestudios/chef-newrelic.git
