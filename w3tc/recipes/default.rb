@@ -14,7 +14,7 @@ node[:deploy].each do |application, deploy|
     action :run
   end 
 
-  execute "mkdirhmod wp-content/uploads" do
+  execute "mkdir wp-content/uploads" do
     command "mkdir #{deploy[:deploy_to]}/current/wp-content/uploads"
     action :run
   end 
