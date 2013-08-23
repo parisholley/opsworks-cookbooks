@@ -13,4 +13,14 @@ node[:deploy].each do |application, deploy|
     command "chmod 777 #{deploy[:deploy_to]}/current/wp-content/w3tc-config"
     action :run
   end 
+
+  execute "mkdirhmod wp-content/uploads" do
+    command "mkdir #{deploy[:deploy_to]}/current/wp-content/uploads"
+    action :run
+  end 
+
+  execute "chmod wp-content/uploads" do
+    command "chmod 777 #{deploy[:deploy_to]}/current/wp-content/uploads"
+    action :run
+  end 
 end
