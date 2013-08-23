@@ -6,7 +6,6 @@
 #
 
 include_recipe "php"
-include_recipe "apache2"
 
 #the older version (3.0) had a bug in the init scripts that when it shut down the daemon it would also kill dpkg as it was trying to upgrade
 #let's remove the old packages before continuing
@@ -25,7 +24,6 @@ end
 execute "newrelic-install" do
     command "newrelic-install install"
     action :nothing
-    notifies :restart, "service[#{node['newrelic']['web_server']['service_name']}]", :delayed
 end
 
 service "newrelic-daemon" do
@@ -101,7 +99,6 @@ case node['newrelic']['startup_mode']
                 :webtransaction_name_files => node['newrelic']['application_monitoring']['webtransaction']['name']['files']
             )
             action :create
-            notifies :restart, "service[#{node['newrelic']['web_server']['service_name']}]", :delayed
         end
     when "external"
         #external startup mode
@@ -126,7 +123,6 @@ case node['newrelic']['startup_mode']
             )
             action :create
             notifies :restart, "service[newrelic-daemon]", :immediately
-            notifies :restart, "service[#{node['newrelic']['web_server']['service_name']}]", :delayed
         end
 
         service "newrelic-daemon" do
