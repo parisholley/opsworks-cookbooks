@@ -4,13 +4,13 @@ node[:deploy].each do |application, deploy|
     next
   end
 
-  execute "" do
+  execute "chmod wp-content/cache" do
     command "chmod 777 #{deploy[:deploy_to]}/current/wp-content/cache"
-    action :nothing
+    action :run
   end
 
-  execute "" do
+  execute "chmod wp-content/w3tc-config" do
     command "chmod 777 #{deploy[:deploy_to]}/current/wp-content/w3tc-config"
-    action :nothing
+    action :run
   end 
 end
