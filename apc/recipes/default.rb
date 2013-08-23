@@ -1,3 +1,3 @@
-package "php-apc" do
+package "php-pecl-apc" do
   action :install
 end
