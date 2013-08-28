@@ -18,7 +18,7 @@ template "#{node['newrelic']['config_path']}/newrelic_plugin_agent.cfg" do
     mode "0644"
     variables(
         :license => node['newrelic']['application_monitoring']['license'],
-        :memcachedhost => node['newrelic']['plugin']['memcachedhost'],
+        :memcachedhost => node['newrelic']['plugin']['memcachedhost']
     )
     action :create
 end
