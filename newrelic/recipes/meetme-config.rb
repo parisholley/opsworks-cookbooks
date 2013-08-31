@@ -6,11 +6,6 @@ execute "newrelic-plugin-agent" do
     action :run
 end
 
-execute "newrelic-plugin-agent" do
-    command "cp /opt/newrelic_plugin_agent/apc-nrp.php"
-    action :run
-end
-
 template "#{node['newrelic']['config_path']}/newrelic_plugin_agent.cfg" do
     source "newrelic_plugin_agent.cfg.erb"
     owner "root"
