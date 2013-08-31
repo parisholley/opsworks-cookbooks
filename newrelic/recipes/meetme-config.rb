@@ -17,3 +17,8 @@ template "#{node['newrelic']['config_path']}/newrelic_plugin_agent.cfg" do
     )
     action :create
 end
+
+execute "newrelic-plugin-agent-start" do
+    command "newrelic_plugin_agent -c #{node['newrelic']['config_path']}/newrelic_plugin_agent.cfg"
+    action :run
+end
