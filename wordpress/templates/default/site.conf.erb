@@ -1,6 +1,7 @@
 server {
     listen          80;
     server_name     127.0.0.1;
+    server_name     <%= @names %>;
     index           index.php index.html index.htm;
     root            /srv/www/<%= @application %>/current/;
     access_log      /var/log/nginx/<%= @application %>-access.log;

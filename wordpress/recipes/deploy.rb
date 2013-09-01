@@ -22,7 +22,8 @@ node[:deploy].each do |application, deploy|
       group "root"
       mode "0644"
       variables(
-          :application => application
+        :names => deploy[:domains].join(" "),
+        :application => application
       )
       action :create
       notifies :restart, "service[nginx]", :immediately
