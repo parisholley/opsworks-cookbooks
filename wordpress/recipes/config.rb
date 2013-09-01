@@ -1,4 +1,6 @@
 include_recipe 'nginx'
+include_recipe 'newrelic'
+include_recipe 'newrelic::meetme-config'
 
 packages = [
     'php-fpm',
@@ -29,4 +31,12 @@ end
 execute "pecl-http" do
     command "pecl install pecl_http"
     action :run
+end
+
+package "php-pecl-apc" do
+  action :install
+end
+
+service "php-fpm" do
+  action [ :enable, :start ]
 end

@@ -4,17 +4,10 @@ Application:
   license_key: <%= @license %>
   poll_interval: 60
 
-  apache_httpd:
-    scheme: http
+  nginx:
     host: localhost
-    port: 8080
-    path: /server-status
-
-<% if !@memcachedhost.nil? %>
-  memcached:
-    host: <%= @memcachedhost %>
-    port: 11211
-<% end %>
+    port: 80
+    path: /nginx_stub_status
 
   php_apc:
     scheme: http
