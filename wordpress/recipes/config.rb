@@ -37,6 +37,8 @@ package "php-pecl-apc" do
   action :install
 end
 
+include_recipe 'newrelic::php-agent'
+
 service "php-fpm" do
   action [ :enable, :start ]
 end

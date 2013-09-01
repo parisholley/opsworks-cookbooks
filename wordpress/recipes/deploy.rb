@@ -1,6 +1,4 @@
 include_recipe 'dependencies'
-include_recipe 'newrelic::meetme-deploy'
-include_recipe 'w3tc'
 
 node[:deploy].each do |application, deploy|
   opsworks_deploy_user do
@@ -27,5 +25,9 @@ node[:deploy].each do |application, deploy|
           :application => application
       )
       action :create
+      notifies :restart, "service[nginx]", :immediately
   end
 end
+
+include_recipe 'newrelic::meetme-deploy'
+include_recipe 'w3tc'

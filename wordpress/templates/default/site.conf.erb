@@ -25,7 +25,7 @@ server {
     }
 
     # allow w3tc to set stuff
-    include /srv/www/<%= @application %>/current/nginx.conf;
+    include /srv/www/<%= @application %>/current/*nginx.conf;
 
     # wordpress permalink support
     location / {
