@@ -27,6 +27,5 @@ node[:deploy].each do |application, deploy|
           :application => application
       )
       action :create
-      notifies :reload, "service[nginx]", :delayed
   end
 end
