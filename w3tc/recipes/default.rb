@@ -32,5 +32,6 @@ node[:deploy].each do |application, deploy|
   execute "chmod nginx.conf" do
     command "chmod 777 #{deploy[:deploy_to]}/current/nginx.conf"
     action :run
+    notifies :reload, "service[nginx]", :immediately
   end  
 end
