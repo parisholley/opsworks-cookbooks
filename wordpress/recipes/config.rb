@@ -1,7 +1,7 @@
 include_recipe 'nginx'
 
 packages = [
-    'php5-fpm',
+    'php-fpm',
     'php-xml',
     'php-common',
     'php-xmlrpc',
