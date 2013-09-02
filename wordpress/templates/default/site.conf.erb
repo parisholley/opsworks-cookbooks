@@ -30,7 +30,7 @@ server {
 
     # wordpress permalink support
     location / {
-        try_files $uri $uri/ /index.php;
+        try_files $uri $uri/ /index.php?$args;
     }
 
     # Pass PHP scripts on to PHP-FPM
